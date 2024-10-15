@@ -2,27 +2,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:background="@color/backgroundColor"
     android:gravity="center"
-    android:background="@color/backgroundColor">
+    android:orientation="vertical"
+    android:padding="16dp">
+
 
     <TextView
         android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="Number System Converter"
+        android:textAllCaps="true"
         android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp" />
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/inputNumber"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:background="@drawable/edittext_background"
         android:hint="Enter a number"
-        android:padding="10dp"
-        android:background="@drawable/edittext_background"/>
+        android:padding="10dp" />
 
     <Spinner
         android:id="@+id/fromBase"
@@ -34,27 +36,28 @@
     <Spinner
         android:id="@+id/toBase"
         android:layout_width="match_parent"
-        android:layout_height="48dp"/>
+        android:layout_height="48dp" />
 
     <Button
         android:id="@+id/convertButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Convert"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="Convert" />
 
     <TextView
         android:id="@+id/conversionResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Result will appear here"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:text="Result will appear here" />
 
     <Button
         android:id="@+id/copyButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Copy to Clipboard"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:text="Copy to Clipboard" />
+
 
 </LinearLayout>

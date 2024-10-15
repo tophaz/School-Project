@@ -41,21 +41,24 @@ public class MainActivity extends AppCompatActivity {
         fromBaseSpinner.setAdapter(adapter);
         toBaseSpinner.setAdapter(adapter);
 
-
+        // Handle fromBaseSpinner selection
         fromBaseSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                fromBase = Integer.parseInt(parentView.getItemAtPosition(position).toString());
+                String selectedBase = parentView.getItemAtPosition(position).toString();
+                fromBase = getBaseFromSelection(selectedBase); // Map the selection to a base number
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {}
         });
 
+        // Handle toBaseSpinner selection
         toBaseSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                toBase = Integer.parseInt(parentView.getItemAtPosition(position).toString());
+                String selectedBase = parentView.getItemAtPosition(position).toString();
+                toBase = getBaseFromSelection(selectedBase); // Map the selection to a base number
             }
 
             @Override
@@ -64,6 +67,22 @@ public class MainActivity extends AppCompatActivity {
 
         convertButton.setOnClickListener(v -> convertNumber());
         copyButton.setOnClickListener(v -> copyToClipboard());
+    }
+
+    // Method to map the selected string from the spinner to its corresponding base
+    private int getBaseFromSelection(String base) {
+        switch (base) {
+            case "Binary":
+                return 2;
+            case "Octal":
+                return 8;
+            case "Decimal":
+                return 10;
+            case "Hexadecimal":
+                return 16;
+            default:
+                return 10; // Default to Decimal in case of unknown
+        }
     }
 
     private void convertNumber() {
@@ -122,6 +141,5 @@ public class MainActivity extends AppCompatActivity {
         ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData clip = ClipData.newPlainText("Conversion Result", conversionResult.getText());
         clipboard.setPrimaryClip(clip);
-        // Optionally show a Toast message here
     }
 }
