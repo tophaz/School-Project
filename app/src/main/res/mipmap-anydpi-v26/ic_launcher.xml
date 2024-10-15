@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@drawable/study" />
+    <foreground android:drawable="@drawable/study" />
+    <monochrome android:drawable="@drawable/study" />
+</adaptive-icon>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Number System Converter</string>
+    <string-array name="bases_array">
+        <item>Binary</item>
+        <item>Decimal</item>
+        <item>Octal</item>
+        <item>Hexadecimal</item>
+    </string-array>
+</resources>

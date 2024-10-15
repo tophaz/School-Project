@@ -1,0 +1,5 @@
+<resources>
+    <color name="backgroundColor">#c9d6ff</color> <!-- Adjust this color as needed -->
+    <color name="editTextBackground">#ffffff</color> <!-- Background color for EditText -->
+    <!-- Add other colors you need -->
+</resources>
